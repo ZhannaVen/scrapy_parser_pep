@@ -1,4 +1,4 @@
-
+from pathlib import Path
 
 BOT_NAME = 'pep_parse'
 
@@ -14,4 +14,14 @@ FEEDS = {
         'fields': ['number', 'name', 'status'],
         'overwrite': True
     },
+}
+
+BASE_DIR = Path(__file__).parent.parent
+
+RESULTS_DIR = 'results'
+
+DATETIME_FORMAT = '%Y-%m-%d_%H-%M-%S'
+
+ITEM_PIPELINES = {
+    'pep_parse.pipelines.PepParsePipeline': 300,
 }
