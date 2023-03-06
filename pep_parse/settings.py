@@ -2,14 +2,20 @@ from pathlib import Path
 
 BOT_NAME = 'pep_parse'
 
-SPIDER_MODULES = ['pep_parse.spiders']
+SPIDERS_DIR = 'pep_parse.spiders'
 
-NEWSPIDER_MODULE = 'pep_parse.spiders'
+SPIDER_MODULES = [SPIDERS_DIR]
+
+NEWSPIDER_MODULE = SPIDERS_DIR
 
 ROBOTSTXT_OBEY = True
 
+RESULTS_DIR = 'results'
+
+FILE_NAME = 'pep_%(time)s.csv'
+
 FEEDS = {
-    'results/pep_%(time)s.csv': {
+    f'{RESULTS_DIR}/{FILE_NAME}': {
         'format': 'csv',
         'fields': ['number', 'name', 'status'],
         'overwrite': True
@@ -18,10 +24,10 @@ FEEDS = {
 
 BASE_DIR = Path(__file__).parent.parent
 
-RESULTS_DIR = 'results'
-
 DATETIME_FORMAT = '%Y-%m-%d_%H-%M-%S'
 
 ITEM_PIPELINES = {
     'pep_parse.pipelines.PepParsePipeline': 300,
 }
+
+PEP_URL = 'peps.python.org'
