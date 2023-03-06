@@ -19,12 +19,8 @@ class PepSpider(scrapy.Spider):
         number, name = (
             response.css('h1.page-title::text').get().split(' – ')
         )
-        yield PepParseItem(
-            {
-                'number': number.split()[1],
-                'name': name,
-                'status': response.css(
-                    'dt:contains("Status") + dd abbr::text'
-                ).get()
-            }
-        )
+        yield PepParseItem(dict(
+            number=number.split()[1],
+            name=name,
+            status=response.css('dt:contains("Status") + dd abbr::text').get()
+        ))
