@@ -2,7 +2,7 @@
 
 ### Description
 
-The project obtains data on the statuses of all PEPs) from [peps.python.org](https://peps.python.org/).
+The project obtains data on the statuses of all PEPs from [peps.python.org](https://peps.python.org/).
 
 Parser outputs the collected information into two .csv files:
 
