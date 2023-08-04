@@ -2,9 +2,9 @@
 
 ### Description
 
-The project obtains data on the statuses of all PEPs from [peps.python.org](https://peps.python.org/).
+Data is parsed using the Scrapy framework from the PEP general information page [peps.python.org](https://peps.python.org/), following the links, and collecting data about each PEP. 
 
-Parser outputs the collected information into two .csv files:
+The parser prepares the data and saves it into two csv files in the results folder:
 
 - list of all PEPs: number, name and status
 
